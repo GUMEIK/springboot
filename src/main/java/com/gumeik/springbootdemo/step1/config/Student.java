@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration//表明该类为配置类
 public class Student {
-    @Bean
+    @Bean//bean的默认id为方法名，默认的值为方法的返回值
     public Person createPerson(){
         Person person = new Person();
         person.setUsername("gumeik");

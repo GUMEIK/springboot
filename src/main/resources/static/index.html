@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SpringBoot测试</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<h1>springboot接口测试</h1>
+<button id="send">发送请求</button>
+<script>
+    async function sendRequest() {
+        let params = {
+            name:"gumeik",
+            age:17,
+            info:{
+                sex:"男",
+                lover:"写书"
+            }
+        }
+        let response = await axios("/test",{
+            method:"post",
+            data:params
+        });
+        console.log(response)
+    };
+    let sendRequestBtn = document.getElementById("send");
+    sendRequestBtn.onclick = function () {
+        sendRequest();
+    }
+</script>
+</body>
+</html>
